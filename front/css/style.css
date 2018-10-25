@@ -1,0 +1,63 @@
+body {
+    background:  #f05f40;
+}
+
+.footer {
+    background-image: url(../img/OCNVML0.jpg);
+    background-repeat: no-repeat;
+}
+
+.form-group{
+    width: 40%;
+}
+nav, .card{
+    background-color: #f05f40;
+}
+.card{
+    padding: 16px 0px 0px 0px;
+}
+
+p{
+    color: #fff;
+}
+
+.annotation{
+    font-size: 0.5em;
+}
+  .table-fixed thead {
+    width: 97%;
+  }
+  .table-fixed tbody {
+    height: 230px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+    display: block;
+  }
+  .table-fixed tbody td, .table-fixed thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+  }
+
+  .competences{
+      background-image: url(../img/bg_competences.jpg);
+      height: 400px;
+      width: 1100px;
+  }
+  .experiences{
+    background-image: url(../img/bg_expériences.jpg);
+    height: 400px;
+    width: 1100px;
+  }
+
+  .formations{
+    background-image: url(../img/bg_formations.png);
+    height: 400px;
+    width: 1100px;
+  }
+  .loisirs{
+    background-image: url(../img/bg_loisirs.png);
+    height: 400px;
+    width: 1100px;
+  }

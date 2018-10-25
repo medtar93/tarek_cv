@@ -1,6 +1,7 @@
-<?php require 'connexion.php';
-// gestion MAJ d'une info
+<?php require 'inc/connexion.php';
+include 'inc/connexion_user.php';
 
+// gestion MAJ d'une info
 if(isset ($_POST['loisir'])){// si on areçu un nouveau loisir 
    
     $loisir = addslashes($_POST['loisir']);
@@ -18,33 +19,34 @@ $sql = $pdoCV-> query("SELECT * FROM t_loisirs WHERE id_loisir='$id_loisir'");
 $ligne_loisir = $sql->fetch(); //va chercher! va!
 
 
-
+include 'inc/doc1.php';
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/style.css">
-    <title></title>
-</head>
-<body>
+<title>BACK OFFICE : TAREK CV - MODIFIER LOISIR</title>
+<?php include 'inc/head2.php';
+include 'inc/header3.php';
+?>
 
-    <h1>BACK OFFICE : TAREK CV</h1>
-    <h2>Mise à jour d'un loisir</h2>
-<?php echo $ligne_loisir['loisir'];?>
+    <div class="text-white">
+        <h1 class="text-uppercase ">Mise à jour d'un loisir</h1>
+        <hr>
+        <span style="font-size: 2em"><?php echo $ligne_loisir['loisir'];?></span>
+    </div>
 
+    <br> <br>
+    <div class="btn btn-primary btn-xl js-scroll-trigger">
+    <a href="#majloisir" class="text-white text-uppercase">mettre à jour<i class="fas fa-pencil-alt ml-3"></i></a>
+    </div>
+</header>
 <hr>
-<form action="modif_loisir.php" method="post">
-   <div class="">
+<form id="majloisir" action="modif_loisir.php" method="post" class="ml-5">
+   <div class="mb-2 form-group mx-auto">
         <label for="loisir">Loisir</label>
-        <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir'];?>" placeholder="nouveau loisir" required>
+        <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir'];?>" placeholder="nouveau loisir" class="form-control" required>
    </div>
 
-   <div class="">
+   <div class="mb-5 form-group mx-auto">
    <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir'];?>" >
-   <button type="submit">MAJ</button>
+   <button type="submit" class="btn btn-primary btn-xl js-scroll-trigger">mettre à jour</button>
    </div>
 </form>
     
